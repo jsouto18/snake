@@ -19,6 +19,7 @@ var velocityX = 0
 var snakeLenght = 10
 var cnt = 0
 var speed = 0
+var flagRender = 0
 
 
 const fruits = [
@@ -38,30 +39,34 @@ window.addEventListener('keydown', function(e) {
 	switch (e.keyCode) {
 
 		case 37:
-			if (velocityX != 1){
+			if (velocityX != 1 && flagRender == 0){
 				velocityX = -1
 				velocityY = 0
+				flagRender=1
 			}
 		break;
 
 		case 38:
-			if (velocityY != 1){
+			if (velocityY != 1 && flagRender == 0){
 				velocityX = 0
 				velocityY = -1
+				flagRender=1
 			}
 		break;
 
 		case 39:
-			if (velocityX != -1){
+			if (velocityX != -1 && flagRender == 0){
 				velocityX = 1
 				velocityY = 0
+				flagRender=1
 			}
 		break;
 
 		case 40:
-			if (velocityY != -1){
+			if (velocityY != -1 && flagRender == 0){
 				velocityX = 0
 				velocityY = 1
+				flagRender=1
 			}
 		break;
 	}
@@ -84,9 +89,7 @@ function position() {
 		} else if (positionX > gameContainer.clientWidth - 20) {
 			positionX = 0;
 		} 
-console.log(speed)
-console.log(insane)
-		
+
 		for(i=cnt; i>0; i--){
 			var id = 'tail'+i
 			var tail = document.getElementById(id)
@@ -98,16 +101,17 @@ console.log(insane)
 				var tailBefore = snake
 			}
 
-			if ( snake.style.top == tail.style.top && snake.style.left == tail.style.left) {
+			if ( positionY+'px' == tail.style.top && positionX+'px' == tail.style.left) {
 				gameOverf()
 			}
 
 			tail.style.top = tailBefore.style.top
 			tail.style.left = tailBefore.style.left
 		}
-		
+		console.log(flagRender)
 		snake.style.top = positionY+'px'
 		snake.style.left = positionX+'px'
+		flagRender = 0;
 
 		if (positionY == randomY && positionX == randomX ) {
 			cnt++
