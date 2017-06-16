@@ -1,0 +1,86 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Press Start 2P', cursive;
+	text-align: center;
+}
+#score-container {
+	height: 5vh;
+	width: 95%;
+	margin: auto;
+}
+#points {
+	float: right;
+	padding-top: 15px;
+
+}
+#game-container {
+	border: 2px solid #333;
+	height: 95vh;
+	width: 95%;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+#game-over {
+	border: 2px solid #333;
+	background-color: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	color: #00ff00;
+}
+#game-over .text {
+	margin-bottom: 20px;
+}
+#game-over #restart {
+	padding: 15px 25px;
+	border: 2px solid #00ff00;
+	border-radius: 5px;
+	cursor: pointer;
+}
+#game-over #restart img {
+	height: 19px;
+}
+#snake {
+	width: 10px;
+	height: 10px;
+	background-color: #111;
+	position: absolute;
+}
+.tail {
+	width: 10px;
+	height: 10px;
+	background-color: #111;
+	position: absolute;
+}
+#apple {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	display: none;
+	background-size: contain;
+}
+#start {
+	padding: 15px 25px;
+	text-transform: uppercase;
+	background: #333;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	cursor: pointer;
+}
