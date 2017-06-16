@@ -29,8 +29,8 @@ const fruits = [
 	"./bananas.png"
 ]
 window.addEventListener('load', function(){
-	gameContainer.style.width = Math.floor(gameContainer.clientWidth/15)*15+'px'
-	gameContainer.style.height = Math.floor(gameContainer.clientHeight/15)*15+'px'
+	gameContainer.style.width = Math.floor(gameContainer.clientWidth/20)*20+'px'
+	gameContainer.style.height = Math.floor(gameContainer.clientHeight/20)*20+'px'
 })
 
 window.addEventListener('keydown', function(e) {
@@ -70,18 +70,18 @@ window.addEventListener('keydown', function(e) {
 
 function position() {
 	setTimeout(function(){
-		positionY = positionY + velocityY*15
-		positionX = positionX + velocityX*15
+		positionY = positionY + velocityY*20
+		positionX = positionX + velocityX*20
 
 		if (positionY < 0) {
-			positionY = gameContainer.clientHeight - 15;
-		} else if (positionY > gameContainer.clientHeight - 15) {
+			positionY = gameContainer.clientHeight - 20;
+		} else if (positionY > gameContainer.clientHeight - 20) {
 			positionY = 0;
 		} 
 
 		if (positionX < 0) {
-			positionX = gameContainer.clientWidth - 15;
-		} else if (positionX > gameContainer.clientWidth - 15) {
+			positionX = gameContainer.clientWidth - 20;
+		} else if (positionX > gameContainer.clientWidth - 20) {
 			positionX = 0;
 		} 
 console.log(speed)
@@ -124,8 +124,8 @@ console.log(insane)
 function appleGenerator() {
 	var randomApple = Math.floor(Math.random()*5)
 	apple.style.backgroundImage = "url("+fruits[randomApple]+")"
-	randomX = Math.floor(Math.random()*gameContainer.clientWidth/15)*15
-	randomY = Math.floor(Math.random()*gameContainer.clientHeight/15)*15
+	randomX = Math.floor(Math.random()*gameContainer.clientWidth/20)*20
+	randomY = Math.floor(Math.random()*gameContainer.clientHeight/20)*20
 
 	apple.style.top = randomY+'px'
 	apple.style.left = randomX+'px'

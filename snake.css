@@ -54,20 +54,20 @@ body {
 	height: 19px;
 }
 #snake {
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	background-color: #111;
 	position: absolute;
 }
 .tail {
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	background-color: #111;
 	position: absolute;
 }
 #apple {
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	position: absolute;
 	display: none;
 	background-size: contain;
