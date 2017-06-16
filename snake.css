@@ -12,8 +12,10 @@ body {
 #points {
 	float: right;
 	padding-top: 13px;
+}
 
-
+.b5:hover{
+	color: #00ff00;
 }
 #game-container {
 	border: 2px solid #333;
@@ -72,6 +74,7 @@ body {
 }
 #start {
 	padding: 15px 25px;
+	line-height: 28px;
 	text-transform: uppercase;
 	background: #333;
 	border-radius: 5px;

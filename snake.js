@@ -4,6 +4,12 @@ var startButton = document.getElementById('start')
 var points = document.getElementById('points')
 var gameOver = document.getElementById('game-over')
 
+var b1 = document.getElementById('b1')
+var b2 = document.getElementById('b2')
+var b3 = document.getElementById('b3')
+
+
+var insane = 0
 var positionY = 0
 var positionX = 0
 var randomY = 0
@@ -12,6 +18,7 @@ var velocityY = 0
 var velocityX = 0
 var snakeLenght = 10
 var cnt = 0
+var speed = 0
 
 
 const fruits = [
@@ -77,7 +84,8 @@ function position() {
 		} else if (positionX > gameContainer.clientWidth - 15) {
 			positionX = 0;
 		} 
-
+console.log(speed)
+console.log(insane)
 		
 		for(i=cnt; i>0; i--){
 			var id = 'tail'+i
@@ -103,12 +111,14 @@ function position() {
 
 		if (positionY == randomY && positionX == randomX ) {
 			cnt++
+			if(insane == 1 && speed > 15)
+			speed -= 3
 			appleGenerator()
 			incSnake()
 			score()
 		}
 		position()
-	}, 50)
+	}, speed)
 }
 
 function appleGenerator() {
@@ -146,11 +156,37 @@ function gameOverf() {
 	apple.style.display = 'none'
 }
 
-startButton.addEventListener( 'click' , function() {
+b1.addEventListener( 'click' , function() {
 	startButton.style.display = 'none'
 	apple.style.display = 'block'
 	position()
 	appleGenerator()
+	speed = 150
+})
+
+b2.addEventListener( 'click' , function() {
+	startButton.style.display = 'none'
+	apple.style.display = 'block'
+	position()
+	appleGenerator()
+	speed = 100
+})
+
+b3.addEventListener( 'click' , function() {
+	startButton.style.display = 'none'
+	apple.style.display = 'block'
+	position()
+	appleGenerator()
+	speed = 50
+})
+
+b4.addEventListener( 'click' , function() {
+	startButton.style.display = 'none'
+	apple.style.display = 'block'
+	position()
+	appleGenerator()
+	speed = 50
+	insane = 1
 })
 
 document.getElementById('restart').addEventListener("click", function(){
