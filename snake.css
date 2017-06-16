@@ -11,7 +11,8 @@ body {
 }
 #points {
 	float: right;
-	padding-top: 15px;
+	padding-top: 13px;
+
 
 }
 #game-container {
@@ -51,20 +52,20 @@ body {
 	height: 19px;
 }
 #snake {
-	width: 10px;
-	height: 10px;
+	width: 15px;
+	height: 15px;
 	background-color: #111;
 	position: absolute;
 }
 .tail {
-	width: 10px;
-	height: 10px;
+	width: 15px;
+	height: 15px;
 	background-color: #111;
 	position: absolute;
 }
 #apple {
-	width: 10px;
-	height: 10px;
+	width: 15px;
+	height: 15px;
 	position: absolute;
 	display: none;
 	background-size: contain;

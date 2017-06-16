@@ -22,8 +22,8 @@ const fruits = [
 	"./bananas.png"
 ]
 window.addEventListener('load', function(){
-	gameContainer.style.width = Math.floor(gameContainer.clientWidth/10)*10+'px'
-	gameContainer.style.height = Math.floor(gameContainer.clientHeight/10)*10+'px'
+	gameContainer.style.width = Math.floor(gameContainer.clientWidth/15)*15+'px'
+	gameContainer.style.height = Math.floor(gameContainer.clientHeight/15)*15+'px'
 })
 
 window.addEventListener('keydown', function(e) {
@@ -63,18 +63,18 @@ window.addEventListener('keydown', function(e) {
 
 function position() {
 	setTimeout(function(){
-		positionY = positionY + velocityY*10
-		positionX = positionX + velocityX*10
+		positionY = positionY + velocityY*15
+		positionX = positionX + velocityX*15
 
 		if (positionY < 0) {
-			positionY = gameContainer.clientHeight - 10;
-		} else if (positionY > gameContainer.clientHeight - 10) {
+			positionY = gameContainer.clientHeight - 15;
+		} else if (positionY > gameContainer.clientHeight - 15) {
 			positionY = 0;
 		} 
 
 		if (positionX < 0) {
-			positionX = gameContainer.clientWidth - 10;
-		} else if (positionX > gameContainer.clientWidth - 10) {
+			positionX = gameContainer.clientWidth - 15;
+		} else if (positionX > gameContainer.clientWidth - 15) {
 			positionX = 0;
 		} 
 
@@ -114,8 +114,8 @@ function position() {
 function appleGenerator() {
 	var randomApple = Math.floor(Math.random()*5)
 	apple.style.backgroundImage = "url("+fruits[randomApple]+")"
-	randomX = Math.floor(Math.random()*gameContainer.clientWidth/10)*10
-	randomY = Math.floor(Math.random()*gameContainer.clientHeight/10)*10
+	randomX = Math.floor(Math.random()*gameContainer.clientWidth/15)*15
+	randomY = Math.floor(Math.random()*gameContainer.clientHeight/15)*15
 
 	apple.style.top = randomY+'px'
 	apple.style.left = randomX+'px'
@@ -131,13 +131,13 @@ function incSnake() {
 
 function score(){
 	if (cnt < 2)
-		points.innerHTML='000'+cnt*5
+		points.innerHTML='SCORE: 000'+cnt*5
 	else if (cnt < 20)
-		points.innerHTML='00'+cnt*5
+		points.innerHTML='SCORE: 00'+cnt*5
 	else if (cnt < 200)
-		points.innerHTML='0'+cnt*5
+		points.innerHTML='SCORE: 0'+cnt*5
 	else if (cnt < 2000)
-		points.innerHTML=cnt*5+''
+		points.innerHTML='SCORE: '+cnt*5+''
 }
 
 
