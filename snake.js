@@ -108,7 +108,7 @@ function position() {
 			tail.style.top = tailBefore.style.top
 			tail.style.left = tailBefore.style.left
 		}
-		console.log(flagRender)
+
 		snake.style.top = positionY+'px'
 		snake.style.left = positionX+'px'
 		flagRender = 0;
