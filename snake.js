@@ -3,6 +3,7 @@ var gameContainer = document.getElementById('game-container')
 var startButton = document.getElementById('start')
 var points = document.getElementById('points')
 var gameOver = document.getElementById('game-over')
+var bite = new Audio('./bite.mp3');
 
 var b1 = document.getElementById('b1')
 var b2 = document.getElementById('b2')
@@ -117,9 +118,11 @@ function position() {
 			cnt++
 			if(insane == 1 && speed > 15)
 			speed -= 3
+			bite.play()
 			appleGenerator()
 			incSnake()
 			score()
+
 		}
 		position()
 	}, speed)
@@ -161,7 +164,7 @@ function start() {
 		cnt++
 		incSnake()
 	}
-
+bite.volume = 0.1
 }
 
 
