@@ -118,6 +118,7 @@ function position() {
 			cnt++
 			if(insane == 1 && speed > 15)
 			speed -= 3
+			bite.currentTime = 0
 			bite.play()
 			appleGenerator()
 			incSnake()
