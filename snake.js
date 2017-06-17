@@ -8,7 +8,7 @@ var b1 = document.getElementById('b1')
 var b2 = document.getElementById('b2')
 var b3 = document.getElementById('b3')
 
-
+var taid
 var insane = 0
 var positionY = 0
 var positionX = 0
@@ -101,14 +101,14 @@ function position() {
 				var tailBefore = snake
 			}
 
-			if ( positionY+'px' == tail.style.top && positionX+'px' == tail.style.left) {
-				gameOverf()
-			}
-
+		
 			tail.style.top = tailBefore.style.top
 			tail.style.left = tailBefore.style.left
+		if ( positionY+'px' == tail.style.top && positionX+'px' == tail.style.left && cnt>2) {
+			gameOverf()
 		}
-		console.log(flagRender)
+			document.getElementById(id).style.display = 'block'
+		}
 		snake.style.top = positionY+'px'
 		snake.style.left = positionX+'px'
 		flagRender = 0;
@@ -139,8 +139,9 @@ function incSnake() {
 	var tail = document.createElement("DIV")
 	tail.classList.add("tail")
 	tail.id = 'tail'+cnt
-	document.getElementById('game-container').appendChild(tail);
-	
+	taid= 'tail'+cnt
+	document.getElementById('game-container').appendChild(tail)
+	document.getElementById(taid).style.display = 'none'
 }
 
 function score(){
@@ -154,6 +155,14 @@ function score(){
 		points.innerHTML='SCORE: '+cnt*5+''
 }
 
+function start() {
+	for(var h=0; h<2; h++){
+		cnt++
+		incSnake()
+	}
+
+}
+
 
 function gameOverf() {
 	document.getElementById('game-over').style.display = 'flex'
@@ -165,6 +174,7 @@ b1.addEventListener( 'click' , function() {
 	apple.style.display = 'block'
 	position()
 	appleGenerator()
+	start()
 	speed = 150
 })
 
@@ -172,6 +182,7 @@ b2.addEventListener( 'click' , function() {
 	startButton.style.display = 'none'
 	apple.style.display = 'block'
 	position()
+	start()
 	appleGenerator()
 	speed = 100
 })
@@ -181,6 +192,7 @@ b3.addEventListener( 'click' , function() {
 	apple.style.display = 'block'
 	position()
 	appleGenerator()
+	start()
 	speed = 50
 })
 
@@ -189,6 +201,7 @@ b4.addEventListener( 'click' , function() {
 	apple.style.display = 'block'
 	position()
 	appleGenerator()
+	start()
 	speed = 50
 	insane = 1
 })
