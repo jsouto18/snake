@@ -145,14 +145,15 @@ function incSnake() {
 }
 
 function score(){
-	if (cnt < 2)
-		points.innerHTML='SCORE: 000'+cnt*5
-	else if (cnt < 20)
-		points.innerHTML='SCORE: 00'+cnt*5
-	else if (cnt < 200)
-		points.innerHTML='SCORE: 0'+cnt*5
-	else if (cnt < 2000)
-		points.innerHTML='SCORE: '+cnt*5+''
+	scorecnt=cnt-2
+	if (scorecnt < 2)
+		points.innerHTML='SCORE: 000'+scorecnt*5
+	else if (scorecnt < 20)
+		points.innerHTML='SCORE: 00'+scorecnt*5
+	else if (scorecnt < 200)
+		points.innerHTML='SCORE: 0'+scorecnt*5
+	else if (scorecnt < 2000)
+		points.innerHTML='SCORE: '+scorecnt*5+''
 }
 
 function start() {
